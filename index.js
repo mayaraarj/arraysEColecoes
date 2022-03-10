@@ -41,7 +41,7 @@ alfabeto.pop();
 alfabeto.shift();
 
 
-//Comparar ekementos de um array com outro.
+//Comparar elementos de um array com outro.
 const pontuacaoA =[5,6,7];
 const pontuacaoB = [7,3, 10];
 
@@ -110,6 +110,38 @@ let filmesSeries = ["star wars", "matrix",  "mr. robot", "o preço do amanhã", 
 Dica: revise o que faz o método de strings .toUpperCase().
 */
 
-let filmesMaiusculas = filmesSeries.toUpperCase();
-console.log(filmesMaiusculas);
+const filmesSeriesMaiusculas = filmesSeries.map(filmesSeries => filmesSeries.toUpperCase());
 
+console.log(filmesSeriesMaiusculas);
+
+/* Crie outra estrutura semelhante à primeira, mas com os seguintes filmes de animação:
+	"Toy Story", "Procurando Nemo", "Kung-fu Panda", "Wally", "Fortnite"
+Em seguida, crie uma função que receba dois arrays como parâmetros, para poder adicionar os elementos contidos no segundo array, dentro do primeiro, a fim de retornar um único array com todos os filmes como seus elementos. */
+
+const filmesAnimacao = ["Toy Story", "Procurando Nemo", "Kung-fu Panda", "Wally", "Fortnite"];
+
+const filmesSeriesAnimacoes = filmesSeries.concat(filmesAnimacao);
+
+console.log(filmesSeriesAnimacoes);
+
+/* Durante o processo, percebemos que o último elemento na série de filmes animados é, na verdade, um game. Agora devemos editar nosso código e modificá-lo para que possamos remover o último elemento antes de migrar o conteúdo para o array que contém todos os filmes.
+PS: por precaução, salve o elemento que você vai deletar em uma variável.
+*/
+
+const game = filmesSeriesAnimacoes.pop();
+console.log(game);
+
+/* Finalmente, recebemos dois arrays com classificações feitas por diferentes usuários do mundo nos filmes com o seguinte formato:
+	//const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4];
+	//const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5];
+Crie uma função que compare as notas e nos diga se elas são iguais ou diferentes.
+*/
+
+const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4];
+const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5];
+
+if (asiaScores == euroScores){
+    console.log("As notas são iguais")
+} else {
+    console.log("As notas são diferentes")
+}
